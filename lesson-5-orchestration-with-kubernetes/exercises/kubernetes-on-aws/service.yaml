@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lesson-5-kube-app
+  labels:
+    run: lesson-5-kube-app
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: lesson-5-kube-app

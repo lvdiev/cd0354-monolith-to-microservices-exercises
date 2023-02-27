@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lesson-5-kube-app
+  labels:
+    app: lesson-5-kube-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lesson-5-kube-app
+  template:
+    metadata:
+      labels:
+        app: lesson-5-kube-app
+    spec:
+      containers:
+      - name: lesson-5-kube
+        image: lvdinh/lesson-5-kube-app
+        ports:
+        - containerPort: 80
